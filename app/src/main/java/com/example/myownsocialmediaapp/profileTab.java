@@ -59,9 +59,9 @@ public class profileTab extends Fragment implements View.OnClickListener {
         {profileProfession.setText("");}
         else{profileProfession.setText(user.get("ProfileProfession")+"");}
 
-        if(user.get("ProfileSport")==null)
+        if(user.get("ProfilleSport")==null)
         {profileSport.setText("");}
-        else{profileSport.setText(user.get("ProfileSport")+"");}
+        else{profileSport.setText(user.get("ProfilleSport")+"");}
 
         if(user.get("ProfileHobby")==null){
             profileHobby.setText("");
