@@ -175,6 +175,7 @@ else{
     private void transitionToSMA(){
         Intent intentLoggedIn = new Intent (MainActivity.this,loggedInUser.class);
         startActivity(intentLoggedIn);
+        finish();
 
 
 

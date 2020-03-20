@@ -60,25 +60,26 @@ public class logInActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-      final  ProgressDialog dialog = new ProgressDialog(logInActivity.this);
-        dialog.setMessage("Logging In");
-        dialog.show();
+
 
         ParseUser user = new ParseUser();
-
+        final  ProgressDialog dialog = new ProgressDialog(logInActivity.this);
+        dialog.setMessage("Logging In");
+        dialog.show();
 
         user.logInInBackground(loggedInEnterUserName.getText().toString(),
                 loggedInEnterPass.getText().toString(), new LogInCallback() {
                     @Override
                     public void done(ParseUser user, ParseException e) {
                         if(user!=null && e==null){
-         dialog.dismiss();
+
          Toast.makeText(logInActivity.this, "Success", Toast.LENGTH_SHORT).show();
          transitionToSMA();
                         }
                         else{
          Toast.makeText(logInActivity.this, ""+e.getMessage(), Toast.LENGTH_LONG).show();
                         }
+                        dialog.dismiss();
                     }
                 });
 
@@ -103,6 +104,7 @@ public class logInActivity extends AppCompatActivity implements View.OnClickList
     private void transitionToSMA(){
         Intent intentLoggedIn = new Intent (logInActivity.this,loggedInUser.class);
         startActivity(intentLoggedIn);
+        finish();
 
 
 
