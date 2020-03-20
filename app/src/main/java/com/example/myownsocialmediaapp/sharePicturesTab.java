@@ -237,8 +237,7 @@ public class sharePicturesTab extends Fragment implements View.OnClickListener {
             @Override
             public void done(ParseException e) {
                 if(e==null){
-
-                    Toast.makeText(getContext(), "SUCCESSFULLY POSTED", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "SUCCESSFULLY POSTED", Toast.LENGTH_SHORT).show();
 
                 }
 
